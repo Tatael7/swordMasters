@@ -25,9 +25,11 @@
     "card-validator": "^6.1.0",
     "cheeseburger-menu": "0.0.13",
     "dynamic-class-list": "^1.0.82",
-    "express": "^4.16.3",
+    "express": "^4.17.0",
     "if-env": "^1.0.4",
+    "path": "^0.12.7",
     "payment": "^2.3.0",
+    "react-burger-menu": "^2.6.10",
     "react-hamburger-menu": "^1.1.1",
     "react-payment": "^0.1.8",
     "react-router-dom": "^5.0.0"
