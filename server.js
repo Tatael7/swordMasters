@@ -22,6 +22,6 @@ app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/public/index.html"));
 });
 
-// app.listen(PORT, function() {
-//   console.log(`🌎 ==> API server now on port ${PORT}!`);
-// });
+app.listen(PORT, function() {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
+});
