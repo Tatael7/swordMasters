@@ -38,7 +38,7 @@ class LevelOneOne extends React.Component {
         for your shields system. Install it quickly.`;
         this.setState({isShowing: true});
         this.setState({message: newStoryLine});
-        this.setState({link: "/levelonetwo"});
+        this.setState({link: "/leveloneone"});
         this.setState({Battery01: false})
 
     };
