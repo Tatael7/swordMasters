@@ -32,6 +32,7 @@
     "react-burger-menu": "^2.6.10",
     "react-hamburger-menu": "^1.1.1",
     "react-payment": "^0.1.8",
+    "react-router": "^5.0.0",
     "react-router-dom": "^5.0.0"
   }
 }
