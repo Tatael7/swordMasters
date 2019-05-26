@@ -275,7 +275,7 @@ class Game6 extends Component {
     return (
       <div>
         <Container>
-          <div className="A">
+          <div >
           <Row>
               <Col size="md-3">
                 <DuncanIdaho

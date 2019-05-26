@@ -108,7 +108,7 @@ class Game5 extends Component {
     return (
       <div>
         <Container>
-          <div className="A">
+          <div >
           <Row>
             <Modal
                   className="modal"

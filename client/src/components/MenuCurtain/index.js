@@ -7,6 +7,7 @@ class MenuCurtain extends React.Component {
         super(props);
         this.state = {open: false};
     }
+   
 
     render () {
         return (
@@ -23,7 +24,7 @@ class MenuCurtain extends React.Component {
                         >
                             &times;
                         </a>
-                        <div className="overlay-content">
+                        {/* <div className="overlay-content">
                             <div class="items">
                                 <a href="/">Main Menu</a>
                                 <a href="/intro">New Game</a>
@@ -31,7 +32,8 @@ class MenuCurtain extends React.Component {
                                 <a href="/Store">Item Shop</a>
                                 <a href="/leaderBoard">Leader Board</a>
                             </div>
-                        </div>
+                        </div> */}
+                       
                     </div>: undefined}
 
                 {!this.state.open ? 

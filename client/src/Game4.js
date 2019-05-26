@@ -117,7 +117,7 @@ class Game4 extends Component {
             {this.state.message}             
         </Modal>
         <Container>
-          <div className="A">
+          <div >
           <Row>
               <Col size="md-3">
                 <DuncanIdaho/>

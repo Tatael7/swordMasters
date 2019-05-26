@@ -4,7 +4,6 @@ import SardaukarGrunt from "./components/SardaukarGrunt";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-import "./test.css";
 
 class Game extends Component {
 
@@ -55,8 +54,9 @@ class Game extends Component {
   };
   
   pulseAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields},
-    isAttacking:true,
+    this.setState({
+      enemy: {shields: this.state.enemy.shields},
+      isAttacking:true,
     });
     console.log("pulse attack");
     console.log(this.state.enemy.shields);
@@ -83,6 +83,7 @@ class Game extends Component {
       console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
+    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
@@ -131,7 +132,7 @@ class Game extends Component {
         
         <Container 
         >
-          <div className="A">
+          <div >
           <Row >
               <Col size="md-3" >
                 <DuncanIdaho 
