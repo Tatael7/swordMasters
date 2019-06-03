@@ -19,17 +19,8 @@ function DuncanIdaho (props) {
                 className={props.poweredUp ? "poweredUp" : "poweredNotUp"}        
 
              />
-             {/* <img 
-            src={require('../../img/fire-explosion-animation-2.gif')} 
-            id="fireExplosion" alt ="fireExplosion" height ="500" width="450" 
-            style={{
-                position:"fixed", zIndex:5,
-                    
-            }} 
-            className={props.fireExploding ? "fireExploding" : "fireNotExploding"        
-            } 
-            /> */}
-            <img src={Picture} alt="Duncan Idaho" height="400"
+            <img src={Picture} alt="Duncan Idaho" 
+                height="450"
                 className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}/>
             
         </div>

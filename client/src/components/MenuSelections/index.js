@@ -1,10 +1,10 @@
 import React from 'react';
-import "./style.css";
+import "./menu.css";
 
 
-function MenuSelect () {
+const MenuSelect = () => {
     return (
-        <div className="card">
+        <div className="card" id="title">
             <ul id="menuul">
                 <li>
                     <a href="/intro">New Game</a>

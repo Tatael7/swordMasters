@@ -27,11 +27,24 @@ class App extends Component {
     }
 
     render () {
+
+        function initiateStats(){
+            sessionStorage.clear();
+            sessionStorage.setItem("playerShields", 700);
+            sessionStorage.setItem("playerAttack", 100);
+            sessionStorage.setItem("playerDefense", 50);
+    
+            console.log(sessionStorage.getItem("playerShields"));
+            console.log(sessionStorage.getItem("playerAttack"));
+            console.log(sessionStorage.getItem("playerDefense"));
+
+        };
+
         return (
             <div>
                 <Title />
                 <Card />
-
+                {initiateStats()}
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
 
                 {/* <button className="open-modal-btn" onClick={this.openModalHandler}>New Game</button> */}

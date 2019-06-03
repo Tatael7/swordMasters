@@ -27,6 +27,7 @@
     "dynamic-class-list": "^1.0.82",
     "express": "^4.17.0",
     "if-env": "^1.0.4",
+    "mysql": "^2.17.1",
     "path": "^0.12.7",
     "payment": "^2.3.0",
     "react-audio-player": "^0.11.0",

@@ -16,9 +16,6 @@ import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
 import ThankYou from "./ThankYou";
 import Intro from "./Intro";
-import MusicPlayer from "react-audio-player";
-import Cancion from "./img/IronMaiden-ToTameLand8-Bit.mp3";
-
 const routing = (
     <Router>
         <div>
@@ -90,11 +87,11 @@ const routing = (
             <Route exact path="/thankyou" component={ThankYou}/>
             <Route exact path="/intro" component={Intro}/>
 
-            <MusicPlayer
+            {/* <MusicPlayer
                 src={Cancion}
                 autoPlay
                 controls
-            />
+            /> */}
             
         </div>
     </Router >
