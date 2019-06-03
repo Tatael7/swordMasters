@@ -13,7 +13,9 @@ class Game2 extends Component {
     super();
     this.state = {
       player: {
-        shields: 600
+        shields: sessionStorage.getItem("playerShields"),
+        attack: sessionStorage.getItem("playerAttack"),
+        defense: sessionStorage.getItem("playerDefense")
         
       },
       enemy: {
@@ -22,20 +24,22 @@ class Game2 extends Component {
       isAttacking: false,
       isShowing: false,
       message: "",
-      link: ""
+      link: "",
+      pulsedGrunt: false,
+      pierce: false
+
     }
   };
 
   normalAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
-    console.log("normal attack");
-    console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
-    this.setState({enemy: {shields: newEnemyShields}});
-    this.enemyAttack();
+    this.setState({enemy: {shields: newEnemyShields},isAttacking:true,}); 
     this.deathCheckEnemy();
+    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    this.enemyAttack();
     this.deathCheckPlayer();
+
   }
  
   enemyAttack = () => {
@@ -46,34 +50,31 @@ class Game2 extends Component {
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
-  
+
   pulseAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
-    console.log("pulse attack");
-    console.log(this.state.enemy.shields);
+    this.setState({
+      enemy: {shields: this.state.enemy.shields},
+      isAttacking:true,
+      pulsedGrunt:true
+    });
     let roll = Math.floor(Math.random() * 6) + 1;
-    console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
-      let damageDealt = (80/100) * this.state.enemy.shields;
-      console.log(`damage dealt ${damageDealt}`);
+      let damageDealt = Math.floor((80/100) * this.state.enemy.shields);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
-      console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
     else if (roll === 2 || roll === 5) {
-      let damageDealt = (40/100) * this.state.enemy.shields;
-      console.log(`damage dealt ${damageDealt}`);
+      let damageDealt = Math.floor((40/100) * this.state.enemy.shields);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
-      console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
     else if (roll === 3 || roll === 6) {
       let damageDealt = 0;
-      console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
-      console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
+    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({pulsedGrunt:false})}, 550);
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
@@ -108,7 +109,7 @@ class Game2 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="A">
         <Modal
           className="modal"
           show={this.state.isShowing}
@@ -121,28 +122,32 @@ class Game2 extends Component {
           <div >
           <Row>
               <Col size="md-3">
-                <DuncanIdaho/>
+                <DuncanIdaho
+                  isAttacking={this.state.isAttacking}            
+                />
               </Col>
               <Col size="md-6">
-                <SardaukarGrunt/>
+                <SardaukarGrunt
+                  isAttacking={this.state.isAttacking}
+                  pulsedGrunt={this.state.pulsedGrunt}
+                />
               </Col>
               <Col size="md-3">
                 <SardaukarElite/>
               </Col>
           </Row>
-          </div>  
-          <BattleMenu
-                playerShields = {this.state.player.shields}
-                // playerAttack = {this.state.player.attack}
-                normalAttack = {this.normalAttack}
-                pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}
-                // enemyAttack = {this.state.enemy.attack}
-               
-          />
-            
+          <Row>
+            <BattleMenu
+              playerShields = {this.state.player.shields}
+              playerAttack = {this.state.player.attack}
+              playerDefense = {this.state.player.defense}
+              normalAttack = {this.normalAttack}
+              pulseAttack = {this.pulseAttack}
+              enemyShields = {this.state.enemy.shields}   
+            /> 
+          </Row>
+        </div>
         </Container>
-        
       </div>
     );
   }

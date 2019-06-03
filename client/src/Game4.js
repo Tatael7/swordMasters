@@ -107,7 +107,7 @@ class Game4 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="A">
        
        <Modal
           className="modal"
@@ -132,14 +132,17 @@ class Game4 extends Component {
                 <SardaukarGrunt/>                
               </Col>
           </Row>
-          </div>  
-              <BattleMenu
-                playerShields = {this.state.player.shields}
-                normalAttack = {this.normalAttack}
-                pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}
-              />
-            
+          <Row>
+          <BattleMenu
+              playerShields = {this.state.player.shields}
+              playerAttack = {this.state.player.attack}
+              playerDefense = {this.state.player.defense}
+              normalAttack = {this.normalAttack}
+              pulseAttack = {this.pulseAttack}
+              enemyShields = {this.state.enemy.shields}   
+            />
+          </Row>
+          </div>
         </Container>
         
       </div>

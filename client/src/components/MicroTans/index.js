@@ -1,9 +1,9 @@
 import React from "react";
 import Valid from "card-validator";
-import Potion from "./potion.jpeg";
-import ExBoost from "./exBoost.jpeg";
-import Crissaegrim from "./criss.png";
-import GodMode from "./godMode.jpg";
+import Potion from "../../img/item_healthUp.png";
+import ExBoost from "../../img/item_upMaxHealth.png";
+import Crissaegrim from "../../img/item_swordCrissaegrim.png";
+import GodMode from "../../img/item_godMode.png";
 
 
 let numberValidation = Valid.number("4111");
@@ -52,12 +52,6 @@ class MicroTransactions extends React.Component {
                     <form className="card card-body">
                         <h3>Payment</h3>
                         <label htmlFor="fname">Accepted Cards</label>
-                        <div className="icon-container">
-                            {/* <i class="fa fa-cc-visa" style="color:navy;"></i>
-                            <i class="fa fa-cc-amex" style="color:blue;"></i>
-                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                            <i class="fa fa-cc-discover" style="color:orange;"></i> */}
-                        </div>
                         <label htmlFor="cname">Name on Card</label>
                         <input type="text" id="cname" name="cardname" placeholder="John Doe"/>
                         <label htmlFor="cnum">Number on Card</label>

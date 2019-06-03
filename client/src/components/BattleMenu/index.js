@@ -66,7 +66,7 @@ function BattleMenu(props)  {
                             
                         </ul>
                         <MusicPlayer
-                            src={Cancion}
+                            src={props.cancion}
                             autoPlay
                             controls
                         />

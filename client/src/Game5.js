@@ -106,17 +106,18 @@ class Game5 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="A">
+       
+       <Modal
+          className="modal"
+          show={this.state.isShowing}
+          close={this.closeModalHandler}
+          link={this.state.link}>  
+            {this.state.message}             
+        </Modal>
         <Container>
           <div >
           <Row>
-            <Modal
-                  className="modal"
-                  show={this.state.isShowing}
-                  close={this.closeModalHandler}
-                  link={this.state.link}>  
-                    {this.state.message}             
-                </Modal>
               <Col size="md-3">
                 <DuncanIdaho/>
               </Col>
@@ -125,21 +126,21 @@ class Game5 extends Component {
               </Col>
               <Col size="md-3">
                 <SardaukarElite/>
-                                
               </Col>
-            </Row>
-            </div>
-              <BattleMenu
-                playerShields = {this.state.player.shields}
-                // playerAttack = {this.state.player.attack}
-                normalAttack = {this.normalAttack}
-                pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}
-                // enemyAttack = {this.state.enemy.attack}
-               
-              />
-            
+          </Row>
+          <Row>
+          <BattleMenu
+              playerShields = {this.state.player.shields}
+              playerAttack = {this.state.player.attack}
+              playerDefense = {this.state.player.defense}
+              normalAttack = {this.normalAttack}
+              pulseAttack = {this.pulseAttack}
+              enemyShields = {this.state.enemy.shields}   
+            />
+          </Row>
+          </div>
         </Container>
+        
       </div>
     );
   }

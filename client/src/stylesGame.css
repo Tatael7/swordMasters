@@ -187,7 +187,9 @@ opacity:50% */
 .notPulsedGrunt {
   visibility: hidden;
 }
-
+.notPierce{
+  visibility: hidden;
+}
     .introMovie{
       margin-top:-5%;
       margin-left:3%;

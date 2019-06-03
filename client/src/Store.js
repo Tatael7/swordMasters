@@ -1,11 +1,11 @@
 import React from "react";
-import MicroTransactions from "./components/MicroTans";
+import MicroTrans from "./components/MicroTans";
 
 class Store extends React.Component {
     render() {
         return (
             <div>
-                <MicroTransactions/>
+                <MicroTrans/>
             </div>
             
         )

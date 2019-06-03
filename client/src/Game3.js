@@ -107,7 +107,7 @@ class Game3 extends Component {
 
   render() {
     return (
-      <div>
+      <div className="A">
         <Modal
           className="modal"
           show={this.state.isShowing}
@@ -126,17 +126,17 @@ class Game3 extends Component {
                 <SardaukarElite/>                
               </Col>
           </Row>
+          <Row>
+          <BattleMenu
+              playerShields = {this.state.player.shields}
+              playerAttack = {this.state.player.attack}
+              playerDefense = {this.state.player.defense}
+              normalAttack = {this.normalAttack}
+              pulseAttack = {this.pulseAttack}
+              enemyShields = {this.state.enemy.shields}   
+            />
+          </Row>
           </div>
-              <BattleMenu
-                playerShields = {this.state.player.shields}
-                // playerAttack = {this.state.player.attack}
-                normalAttack = {this.normalAttack}
-                pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}
-                // enemyAttack = {this.state.enemy.attack}
-               
-              />
-            
         </Container>
         
       </div>
