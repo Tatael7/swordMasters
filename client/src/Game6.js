@@ -144,8 +144,13 @@ class Game6 extends Component {
   render() {
     return (
       <div 
-      // className="A"
-      >
+      
+      // style={{
+      //   position:"",
+      //   zIndex:-1, marginTop:"1%",
+      //   width:"100%"
+      //     }}
+          >
        
        <Modal
           className="modal"
@@ -156,6 +161,9 @@ class Game6 extends Component {
         </Modal>
         <Container>
           <div >
+          <img src={require("../src/img/rain.gif")} alt="rain" width="100%"
+             style={{zIndex:30, position:"fixed"}}   
+              />
           <Row>
               <Col size="md-3">
                 <DuncanIdaho
