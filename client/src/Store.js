@@ -4,7 +4,9 @@ import MicroTrans from "./components/MicroTans";
 class Store extends React.Component {
     render() {
         return (
-            <div>
+            <div
+                style={{marginTop:"10%"}}
+                >
                 <MicroTrans/>
             </div>
             
