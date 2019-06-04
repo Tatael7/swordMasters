@@ -19,7 +19,9 @@ class Game extends Component {
         
       },
       enemy: {
-        shields: 500
+        shields: sessionStorage.getItem("enemyShields"),
+        attack: sessionStorage.getItem("enemyAttack"),
+        defense: sessionStorage.getItem("enemyDefense")
       },
       isAttacking: false,
       isShowing: false,
@@ -54,7 +56,7 @@ class Game extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    let newPlayerShields = this.state.player.shields - 70;
+    let newPlayerShields = this.state.player.shields - 100;
     this.setState({player: {shields: newPlayerShields}});
   };
   
@@ -110,8 +112,10 @@ class Game extends Component {
   deathCheckEnemy = () => {
     if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
       console.log(`enemy is dead`);
-      let newMessage = "Enemy is dead";
-      sessionStorage.setItem("playerShields", this.state.player.shields);
+      let newMessage = `Enemy has been defeated, you gain experience`;
+      sessionStorage.setItem("playerShields", (this.state.player.shields) + 400);
+      sessionStorage.setItem("playerAttack", 125);
+      sessionStorage.setItem("playerDefense", 50);
       this.setState({isShowing: true});
       this.setState({message: newMessage});
       this.setState({link: "/levelonetwo"});
@@ -120,10 +124,17 @@ class Game extends Component {
   };
 
   render() {
-     
+    function initiateStats(){
+    
+      sessionStorage.setItem("enemyShields", 450);
+      sessionStorage.setItem("enemyAttack", 100);
+      sessionStorage.setItem("enemyDefense", 0);
+
+  };
     return (
       
       <div className="A">
+        {initiateStats()}
         <Modal
           className="modal"
           show={this.state.isShowing}
@@ -156,7 +167,9 @@ class Game extends Component {
                 playerDefense = {this.state.player.defense}
                 normalAttack = {this.normalAttack}
                 pulseAttack = {this.pulseAttack}
-                enemyShields = {this.state.enemy.shields}   
+                enemyShields = {this.state.enemy.shields} 
+                enemyAttack= {this.state.enemy.attack}
+                enemyDefense = {this.state.enemy.defense}  
                 cancion = {this.state.cancion}
               /> 
             </Row>

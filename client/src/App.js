@@ -33,6 +33,11 @@ class App extends Component {
             sessionStorage.setItem("playerShields", 700);
             sessionStorage.setItem("playerAttack", 100);
             sessionStorage.setItem("playerDefense", 50);
+            sessionStorage.setItem("enemyShields", 450);
+
+            // sessionStorage.setItem("enemyShields", 450);
+            // sessionStorage.setItem("enemyAttack", 100);
+            // sessionStorage.setItem("enemyDefense", 0);
     
             console.log(sessionStorage.getItem("playerShields"));
             console.log(sessionStorage.getItem("playerAttack"));

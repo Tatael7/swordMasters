@@ -60,9 +60,9 @@ function BattleMenu(props)  {
                             className="enemyStats" 
                             style={{fontSize:35, color:"lime", backgroundColor:"grey", borderRadius:20, float:"right"}}
                         >
-                            <li>Sheilds:{props.enemyShields}</li>
-                            <li>Attack:</li>
-                            <li>Defense:</li>
+                            <li>Shields:{props.enemyShields}</li>
+                            <li>Attack: {sessionStorage.getItem("enemyAttack")}</li>
+                            <li>Defense:{sessionStorage.getItem("enemyDefense")}</li>
                             
                         </ul>
                         <MusicPlayer

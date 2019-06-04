@@ -22,7 +22,9 @@ class Game2 extends Component {
         
       },
       enemy: {
-        shields: 500
+        shields: sessionStorage.getItem("enemyShields"),
+        attack: sessionStorage.getItem("enemyAttack"),
+        defense: sessionStorage.getItem("enemyDefense")
       },
       isAttacking: false,
       isShowing: false,
@@ -36,7 +38,7 @@ class Game2 extends Component {
   };
 
   normalAttack = () => {
-    let newEnemyShields = this.state.enemy.shields - 100;
+    let newEnemyShields = this.state.enemy.shields - 125;
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({
       enemy: {shields: newEnemyShields},
@@ -55,7 +57,7 @@ class Game2 extends Component {
     this.setState({player: {shields: this.state.player.shields}});
     console.log(`The enemy attacks`);
     console.log(this.state.player.shields);
-    let newPlayerShields = this.state.player.shields - 50;
+    let newPlayerShields = this.state.player.shields - 150;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
   };
@@ -98,7 +100,7 @@ class Game2 extends Component {
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
-    let damageDealt = 50 + pulseAttackCost;
+    let damageDealt = 150 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
   }
@@ -112,7 +114,10 @@ class Game2 extends Component {
   deathCheckEnemy = () => {
     if( this.state.enemy.shields === 0 || this.state.enemy.shields < 0) {
       console.log(`enemy is dead`);
-      let newMessage = "Enemy is dead";
+      let newMessage = `Enemy has been defeated, you gain experience`;
+      sessionStorage.setItem("playerShields", (this.state.player.shields) + 500);
+      sessionStorage.setItem("playerAttack", 150);
+      sessionStorage.setItem("playerDefense", 75);
       this.setState({isShowing: true});
       this.setState({message: newMessage});
       this.setState({link: "/levelonethree"});
@@ -121,8 +126,16 @@ class Game2 extends Component {
   };
 
   render() {
+    function initiateStats(){
+    
+      sessionStorage.setItem("enemyShields", 500);
+      sessionStorage.setItem("enemyAttack", 100);
+      sessionStorage.setItem("enemyDefense", 25);
+
+  };
     return (
       <div className="A">
+        {initiateStats()}
         <Modal
           className="modal"
           show={this.state.isShowing}

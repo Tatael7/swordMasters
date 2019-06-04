@@ -14,10 +14,10 @@ class Game6 extends Component {
     super();
     this.state = {
       player: {
-        shields: 1500       
+        shields: sessionStorage.getItem("playerShields"),
       },
       enemy: {
-        shields: 3000
+        shields: 5000
       },
       isAttacking: false,
       isShowing: false,
@@ -25,7 +25,7 @@ class Game6 extends Component {
       link: "",
       fireExploding:false,
       poweredUp:false,
-      // pulsedGrunt: false,
+      pulsedGrunt: false,
       pierce: false,
       cancion: Cancion
 
@@ -35,19 +35,6 @@ class Game6 extends Component {
     }
   };
 
-  // normalAttack = () => {
-  //   this.setState({enemy: {shields: this.state.enemy.shields}});
-  //   console.log("normal attack");
-  //   console.log(this.state.enemy.shields);
-  //   let newEnemyShields = this.state.enemy.shields - 300;
-  //   console.log(`enemy health ${newEnemyShields}`);
-  //   this.setState({enemy: {shields: newEnemyShields}});
-  //   this.setState({isAttacking:true} ); 
-  //   this.enemyAttack();
-  //   this.deathCheckEnemy();
-  //   this.deathCheckPlayer();
-  //   setTimeout(() =>{this.setState({isAttacking:false})}, 550);
-  // }
   normalAttack = () => {
     let newEnemyShields = this.state.enemy.shields - 300;
     console.log(`enemy health ${newEnemyShields}`);
@@ -66,14 +53,14 @@ class Game6 extends Component {
 
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    let roll = Math.floor(Math.random() * 12) + 1;
+    let roll = Math.floor(Math.random() * 9) + 1;
     console.log(`this is beast's roll ${roll}`);
     if ( roll === 6) {
       let newPlayerShields = this.state.player.shields - this.state.player.shields;
       this.setState({player: {shields: newPlayerShields}});
     }
     else {
-      let newPlayerShields = this.state.player.shields - 300;
+      let newPlayerShields = this.state.player.shields - 500;
       this.setState({player: {shields: newPlayerShields}});
     }
   };
@@ -120,7 +107,7 @@ class Game6 extends Component {
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
-    let damageDealt = pulseAttackCost + 300;
+    let damageDealt = pulseAttackCost + 500;
     this.setState({player: {shields: this.state.player.shields}});
     let roll = Math.floor(Math.random() * 12) + 1;
     console.log(`this is beast's roll ${roll}`);
@@ -157,9 +144,16 @@ class Game6 extends Component {
   };
 
   render() {
+    function initiateStats(){
+    
+      sessionStorage.setItem("enemyShields", 3000);
+      sessionStorage.setItem("enemyAttack", 500);
+      sessionStorage.setItem("enemyDefense", 200);
+
+  };
     return (
       <div className="A">
-       
+       {initiateStats()}
        <Modal
           className="modal"
           show={this.state.isShowing}
