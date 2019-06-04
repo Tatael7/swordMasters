@@ -6,6 +6,7 @@ import "./test.css";
 
 class LevelOneOne extends React.Component {
 
+
     constructor() {
         super();
 
@@ -69,7 +70,7 @@ class LevelOneOne extends React.Component {
     render() {
         
         return (
-            <div className="E">
+            <div className="E" >
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
 
                 <Modal
