@@ -9,10 +9,11 @@ class LevelOneThree extends React.Component {
 
         this.state = {
             isShowing : false,
-            message: `You've defeated the Elite and Grunt team and you take 
+            story: `You've defeated the Elite and Grunt team and you take 
             the Elite's key card and to enter the hidden passageway in the end of the alley.
             Suddenly you are surrounded by enemies, you must choose how to proceed with battle.`,
-            link: ""
+            link: "",
+            message: ""
         }
     }
     
@@ -58,25 +59,36 @@ class LevelOneThree extends React.Component {
     render() {
         
         return (
-            <div  className="C">
+            <div >
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+                <img 
+                    src={require("./img/mapPlay_Straight.jpg")}
+                    alt="map"
+                    height="100%"
+                    width="100%"
+                
+                />
+                <div 
+                    style={{
+                        position:"absolute",
+                        top:150
+                    }}                
+                >
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}
                     link={this.state.link}
-                >
-                    {this.state.message}
-
-                </Modal>                      
+                    >
+                        {this.state.message}             
+                </Modal> 
                 <LevelOne
-                    story={this.state.message}
+                    story={this.state.story}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
-                    
                 />
-                
+                </div>
             </div>
         )
     };

@@ -57,7 +57,7 @@ class Game extends Component {
     let newPlayerShields = this.state.player.shields - 70;
     this.setState({player: {shields: newPlayerShields}});
   };
-  stat
+  
   pulseAttack = () => {
     this.setState({
       enemy: {shields: this.state.enemy.shields},

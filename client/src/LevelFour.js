@@ -9,11 +9,12 @@ class LevelFour extends React.Component {
 
         this.state = {
             isShowing : false,
-            message: `You stand in a sea of blood, dead Sardukar lie around you, 
+            story: `You stand in a sea of blood, dead Sardukar lie around you, 
             rendered to ribbons by the edge of your sword. You hear
             the rythmic machine breathing of your final enemy, he stands before you waiting.
             One more battle hero.`,
-            link: ""
+            link: "",
+            message: ""
         }
     }
     
@@ -64,27 +65,36 @@ class LevelFour extends React.Component {
         
         console.log(this.state);
         return (
-            <div className="D"
-            // style={{position:"fixed", zIndex:1, marginTop:-150}}
-            >
+            <div >
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+                <img 
+                    src={require("./img/mapPlay_Straight.jpg")}
+                    alt="map"
+                    height="100%"
+                    width="100%"
+                
+                />
+                <div 
+                    style={{
+                        position:"absolute",
+                        top:150
+                    }}                
+                >
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}
-                    //link="/game"
-                    link={this.state.link}   
-                >
-                    {this.state.message}            
-                </Modal>
+                    link={this.state.link}
+                    >
+                        {this.state.message}             
+                </Modal> 
                 <LevelOne
-                    story={this.state.message}
+                    story={this.state.story}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
-                    style={{position:"relative", zIndex:-1}}
                 />
-                
+                </div>
             </div>
         )
     };
