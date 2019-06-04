@@ -35,18 +35,33 @@ class Game6 extends Component {
     }
   };
 
+  // normalAttack = () => {
+  //   this.setState({enemy: {shields: this.state.enemy.shields}});
+  //   console.log("normal attack");
+  //   console.log(this.state.enemy.shields);
+  //   let newEnemyShields = this.state.enemy.shields - 300;
+  //   console.log(`enemy health ${newEnemyShields}`);
+  //   this.setState({enemy: {shields: newEnemyShields}});
+  //   this.setState({isAttacking:true} ); 
+  //   this.enemyAttack();
+  //   this.deathCheckEnemy();
+  //   this.deathCheckPlayer();
+  //   setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+  // }
   normalAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
-    console.log("normal attack");
-    console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 300;
     console.log(`enemy health ${newEnemyShields}`);
-    this.setState({enemy: {shields: newEnemyShields}});
-    this.setState({isAttacking:true} ); 
-    this.enemyAttack();
+    this.setState({
+      enemy: {shields: newEnemyShields},
+      isAttacking:true,
+      pulsedGrunt: true
+    }); 
     this.deathCheckEnemy();
-    this.deathCheckPlayer();
     setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
+    this.enemyAttack();
+    this.deathCheckPlayer();
+
   }
 
   enemyAttack = () => {
@@ -137,32 +152,31 @@ class Game6 extends Component {
       this.setState({fireExploding:true});
       this.setState({isShowing: true});
       this.setState({message: newMessage});
-      this.setState({link: "/thankyou"});
+      this.setState({link:"/thankyou"});
     }
   };
 
   render() {
     return (
-      <div 
-      
-      // style={{
-      //   position:"",
-      //   zIndex:-1, marginTop:"1%",
-      //   width:"100%"
-      //     }}
-          >
+      <div className="A">
        
        <Modal
           className="modal"
           show={this.state.isShowing}
           close={this.closeModalHandler}
-          link={this.state.link}>  
+          link={this.state.link}
+          style={{
+            zIndex:10,
+            position: "fixed",
+            top:50
+          }}
+          >  
             {this.state.message}             
         </Modal>
         <Container>
           <div >
-          <img src={require("../src/img/rain.gif")} alt="rain" width="100%"
-             style={{zIndex:30, position:"fixed"}}   
+          <img src={require("../src/img/rain.gif")} alt="rain" height="80%" width="100%"
+             style={{zIndex:0, position:"fixed", top:40}}   
               />
           <Row>
               <Col size="md-3">
@@ -175,6 +189,7 @@ class Game6 extends Component {
               <Col size="md-9">
                 <BeastHarkonnen
                   fireExploding={this.state.fireExploding}
+                  pulsedGrunt={this.state.pulsedGrunt}
                 />
               </Col>
           </Row>

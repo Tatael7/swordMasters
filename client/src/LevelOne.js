@@ -70,16 +70,13 @@ class LevelOneOne extends React.Component {
     render() {
         
         return (
-            <div className="E">
+            <div >
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <img 
                     src={require("./img/mapPlay_LeftRight.jpg")}
                     alt="map"
                     height="100%"
                     width="100%"
-                    // style={{
-                    //     zIndex:-5
-                    // }}
                 
                 />
                 <div 

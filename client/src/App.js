@@ -41,7 +41,12 @@ class App extends Component {
         };
 
         return (
-            <div>
+            <div
+                style={{
+                    position:"relative",
+                    top:50
+                }}
+            >
                 <Title />
                 <Card />
                 {initiateStats()}

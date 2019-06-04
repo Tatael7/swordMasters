@@ -4,6 +4,8 @@ import SardaukarElite from "./components/SardaukarElite";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
+import Cancion from "./img/IronMaiden-ToTameLand8-Bit.mp3";
+
 
 
 class Game3 extends Component {
@@ -21,20 +23,28 @@ class Game3 extends Component {
       isAttacking: false,
       isShowing: false,
       message: "",
-      link: ""
+      link: "",
+      pulsedGrunt: false,
+      pierce: false,
+      cancion: Cancion
+
     }
   };
 
   normalAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
-    console.log("normal attack");
-    console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
-    this.setState({enemy: {shields: newEnemyShields}});
-    this.enemyAttack();
+    this.setState({
+      enemy: {shields: newEnemyShields},
+      isAttacking:true,
+      pulsedGrunt: true
+    }); 
     this.deathCheckEnemy();
+    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
+    this.enemyAttack();
     this.deathCheckPlayer();
+
   }
  
   enemyAttack = () => {
@@ -47,32 +57,33 @@ class Game3 extends Component {
   };
   
   pulseAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields}});
-    console.log("pulse attack");
-    console.log(this.state.enemy.shields);
+    this.setState({
+      enemy: {shields: this.state.enemy.shields},
+      isAttacking:true
+      // pierce:true
+    });
     let roll = Math.floor(Math.random() * 6) + 1;
-    console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
-      let damageDealt = (80/100) * this.state.enemy.shields;
+      this.setState({pierce:true});
+      let damageDealt = Math.floor((80/100) * this.state.enemy.shields);
       console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
-      console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
     else if (roll === 2 || roll === 5) {
-      let damageDealt = (40/100) * this.state.enemy.shields;
+      this.setState({pierce:true});
+      let damageDealt = Math.floor((40/100) * this.state.enemy.shields);
       console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
-      console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
     else if (roll === 3 || roll === 6) {
       let damageDealt = 0;
-      console.log(`damage dealt ${damageDealt}`);
       let newEnemyShields = this.state.enemy.shields - damageDealt;
-      console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
+    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({pierce:false})}, 550);
     this.enemyPulseAttack();
     this.deathCheckEnemy();
     this.deathCheckPlayer();
@@ -82,7 +93,7 @@ class Game3 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields}});
-    let pulseAttackCost = this.state.player.shields/10;
+    let pulseAttackCost = Math.floor(this.state.player.shields/10);
     let damageDealt = 50 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
@@ -119,11 +130,16 @@ class Game3 extends Component {
           <div >
           <Row>
               <Col size="md-3">
-                <DuncanIdaho/>
+                <DuncanIdaho
+                  isAttacking={this.state.isAttacking}
+                  pierce={this.state.pierce}
+                />
               </Col>
               <Col size="md-6"></Col>
               <Col size="md-3">
-                <SardaukarElite/>                
+                <SardaukarElite
+                  pulsedGrunt={this.state.pulsedGrunt}
+                />                
               </Col>
           </Row>
           <Row>
@@ -134,6 +150,7 @@ class Game3 extends Component {
               normalAttack = {this.normalAttack}
               pulseAttack = {this.pulseAttack}
               enemyShields = {this.state.enemy.shields}   
+              cancion={this.state.cancion}
             />
           </Row>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Picture from "./beastHarkonnen.gif";
+import Pulsed from "../../img/slashPlayer (1).gif";
 
 function BeastHarkonnen (props) {
     return (
@@ -14,7 +15,18 @@ function BeastHarkonnen (props) {
             className={props.fireExploding ? "fireExploding" : "fireNotExploding"        
             } 
             />
-           <img src={Picture} alt="Beast Harkonnen" height="600" 
+            <img src={Pulsed}
+                id="pulsedGrunt"
+                alt=" pulsed grunt"
+                height="500"
+                width="500"
+                style={{
+                    position: "absolute",
+                    zIndex: 2
+                }}
+                className={props.pulsedGrunt ? "pulsedGrunt" : "notPulsedGrunt"}
+            />
+           <img src={Picture} alt="Beast Harkonnen" height="500" 
                 // style={{
                 //     position:"relative", zIndex:1,                
                 // }} 

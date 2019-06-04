@@ -13,10 +13,13 @@ const MenuSelect = () => {
                     <a href="/Login">Login</a>
                 </li>
                 <li>
-                <a href="/LeaderBoard">Leader Board</a>
+                    <a href="/LeaderBoard">Leader Board</a>
                 </li>
                 <li>
-                <a href="/Store">Item Shop</a>
+                    <a href="/Store">Item Shop</a>
+                </li>
+                <li>
+                    <a href="/thankyou">Credits</a>
                 </li>
             </ul>
         </div>

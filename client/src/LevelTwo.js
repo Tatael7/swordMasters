@@ -61,23 +61,36 @@ class LevelOneTwo extends React.Component {
     render() {
         
         return (
-            <div className="B">
+            <div >
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
+                <img 
+                    src={require("./img/mapPlay_LeftRight.jpg")}
+                    alt="map"
+                    height="100%"
+                    width="100%"
+                
+                />
+                <div 
+                    style={{
+                        position:"absolute",
+                        top:150
+                    }}                
+                >
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
                     close={this.closeModalHandler}
                     link={this.state.link}
-                >
-                    {this.state.message}                
+                    >
+                        {this.state.message}             
                 </Modal>
-
                 <LevelOne
                     story={this.state.story}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
                 />
+                </div>
             </div>
         )
     };

@@ -3,7 +3,13 @@ import React, { Component } from "react";
 class ThankYou extends Component{
     render() {
         return(
-            <div>
+            <div 
+                style={{
+                    position:"relative",
+                    top:100
+
+                }}
+            >
         
         
                 <div
@@ -19,11 +25,7 @@ class ThankYou extends Component{
                         <li><h3>Remy- Saturday TA</h3></li>
                         <li><h3>Trilogy UCSD Support Staff and Career Services: Eric, Rebecca, Iris</h3></li>
                         <li>
-                            <h5><marquee behavior="scroll" direction="left"
-                            
-
-                            
-                            >Everyone in the Monday/Wednesday class. ReasonToDrink.Fun, Market Snapshop</marquee></h5>
+                            <h5><marquee behavior="scroll" direction="left">Everyone in the Monday/Wednesday class. ReasonToDrink.Fun, Market Snapshop</marquee></h5>
                         </li>
                     </ul>
                 </div>
