@@ -18,7 +18,7 @@ import ThankYou from "./ThankYou";
 import Intro from "./Intro";
 const routing = (
     <Router>
-        <div>
+        <div style={{position:"relative", marginTop:"-7%"}}>
         <MenuCurtain
         style={{
         position:"relative",

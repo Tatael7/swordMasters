@@ -6,7 +6,7 @@ function BeastHarkonnen (props) {
         <div id="beastHarkonnen">
           <img 
             src={require('../../img/fire-explosion-animation-2.gif')} 
-            id="fireExplosion" alt ="fireExplosion" height ="500" width="450" 
+            id="fireExplosion" alt ="fireExplosion" height ="500"
             style={{
                 position:"absolute", zIndex:5,
                     
@@ -14,7 +14,7 @@ function BeastHarkonnen (props) {
             className={props.fireExploding ? "fireExploding" : "fireNotExploding"        
             } 
             />
-           <img src={Picture} alt="Beast Harkonnen" height="800" 
+           <img src={Picture} alt="Beast Harkonnen" height="600" 
                 // style={{
                 //     position:"relative", zIndex:1,                
                 // }} 
