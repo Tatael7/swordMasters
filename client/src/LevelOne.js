@@ -69,9 +69,24 @@ class LevelOneOne extends React.Component {
     render() {
         
         return (
-            <div className="E">
+            <div>
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
-
+                <img 
+                    src={require("./img/mapPlay_LeftRight.jpg")}
+                    alt="map"
+                    height="100%"
+                    width="100%"
+                    // style={{
+                    //     zIndex:-5
+                    // }}
+                
+                />
+                <div 
+                    style={{
+                        position:"absolute",
+                        top:150
+                    }}                
+                >
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
@@ -81,7 +96,9 @@ class LevelOneOne extends React.Component {
                         {this.state.message}             
                 </Modal>
                 <img src={require("../src/img/Spinning-orb-new-GIF-2.gif")}   alt="Battery01" height="100"
-                       
+                       style={{
+                           float:"right"
+                       }}
                 /> 
                 <LevelOne
                     story={this.state.story}
@@ -89,6 +106,7 @@ class LevelOneOne extends React.Component {
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
                 />
+                </div>
             </div>
         )
     };
