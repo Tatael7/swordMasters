@@ -1,5 +1,6 @@
 import React from "react";
-import Picture from "../../img/duncanIdaho.gif";
+import Picture from "./archAt.png";
+import Archer from "./archEmiya.png";
 import Power from "../../img/XSNu.gif";
 import Pierce from "../../Images/piercer.gif";
 
@@ -33,10 +34,19 @@ function DuncanIdaho (props) {
                 className={props.pierce ? "pierce" : "notPierce"}
             
             />
+            {/* added this part */}
+            <img src={Archer} alt="archer"
+                height="450"
+                style={{
+                    position: "absolute"
+                }}
+                className={props.archer ? "archer" : "archerNot"}
+            />
+            {/*this remains the same */}
             <img src={Picture} alt="Duncan Idaho" 
                 height="450"
-                className={props.isAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}/>
-            
+                className={props.isDuncanAttacking ? "DuncanIdaho attacking" : "DuncanIdaho"}
+            />
         </div>
       
     );

@@ -1,9 +1,4 @@
 
-/* .p{
-  color: black;
-  font-size: 100px;
-} */
-
 .combined {
   -webkit-text-stroke: 1px black;
   color: white;
@@ -21,8 +16,9 @@
   -ms-animation: rotating 1s linear infinite;
   -o-animation: rotating 1s linear infinite;
   animation: rotating 1s linear infinite;
-  /* z-index: 1; */
   position: relative;
+  /* added this part */
+  visibility: hidden;
 }
 
 .DuncanIdaho.attacking{
@@ -31,6 +27,7 @@
   -webkit-animation-duration: 800ms;
   animation-name: attack;
   animation-duration: 800;
+  visibility: visible;
  }
 @-webkit-keyframes attack {
   0%   { left: 0px;;}
@@ -40,28 +37,28 @@
   100% { left: 0%;}
 }
 
-/* this wasnt working */
-/* @-webkit-keyframes attackGrunt2 {
-  0%   { right: 0px;}
-
-  50%  { right: 250%;}
-
-  100% { right: 0px;}
-} */
-
-.DuncanDiv.attacking{
-  width: 100px;
-  height: 100px;
+.Grunt {
+  -webkit-animation: rotating 1s linear infinite;
+  -moz-animation: rotating 1s linear infinite;
+  -ms-animation: rotating 1s linear infinite;
+  -o-animation: rotating 1s linear infinite;
+  animation: rotating 1s linear infinite;
   position: relative;
-  -webkit-animation-name: example;
-  -webkit-animation-duration: 1s;
-  animation-name: example;
-  animation-duration: 1s;
-}
-.sardaukarGrunt{
-  float:right
 }
 
+.Grunt.attacking{
+  position: relative;
+  -webkit-animation-name: attackGrunt;
+  -webkit-animation-duration: 800ms;
+  animation-name: attackGrunt;
+  animation-duration: 800;
+ }
+
+@-webkit-keyframes attackGrunt {
+  0% { right: 0px;;}
+  50% {right: 190%;}
+  100% {right: 0%;}
+}
 .Battery01{
 max-width: 30px;
 float: right
@@ -189,10 +186,7 @@ margin-left:30%
   animation-duration: 800;
   transform: translateX(115%);
   transform: scaleX(-1);
-  /* background-color: rgba(52, 52, 52, alpha); */
-/* background-color: black; */
-/* background-color: transparent;
-opacity:50% */
+
 }    
     
 .fireNotExploding{
@@ -206,6 +200,9 @@ opacity:50% */
   visibility: hidden;
 }
 .notPierce{
+  visibility: hidden;
+}
+.archerNot {
   visibility: hidden;
 }
     .introMovie{

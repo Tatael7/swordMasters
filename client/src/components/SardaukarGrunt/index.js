@@ -19,6 +19,7 @@ function SardaukarGrunt (props) {
             <img src={Picture} 
                 alt="Sardaukar Grunt" 
                 height="450"
+                className={props.isGruntAttacking ? "Grunt attacking" : "Grunt"}
             />
         </div>
     );
