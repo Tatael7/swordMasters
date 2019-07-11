@@ -52,7 +52,6 @@ class Game extends Component {
     this.deathCheckEnemy();
     setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 825);
     setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
-    // this.setState({archer:true});
     setTimeout(() => {this.enemyAttack()}, 1000);
     this.deathCheckPlayer();
 

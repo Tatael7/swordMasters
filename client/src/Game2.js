@@ -28,6 +28,7 @@ class Game2 extends Component {
       },
       isDuncanAttacking: false,
       isGruntAttacking: false,
+      archer: true,
       isShowing: false,
       message: "",
       link: "",
@@ -43,11 +44,12 @@ class Game2 extends Component {
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({
       enemy: {shields: newEnemyShields},
+      archer: false,
       isDuncanAttacking:true,
       pulsedGrunt: true
     }); 
     this.deathCheckEnemy();
-    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 825);
     setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
     setTimeout(() => {this.enemyAttack()}, 1000);
     this.deathCheckPlayer();
@@ -56,7 +58,8 @@ class Game2 extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
-      isGruntAttacking: true
+      isGruntAttacking: true,
+      archer: true
     });
     let newPlayerShields = this.state.player.shields - 150;
     this.setState({player: {shields: newPlayerShields}});
@@ -66,6 +69,7 @@ class Game2 extends Component {
   pulseAttack = () => {
     this.setState({
       enemy: {shields: this.state.enemy.shields},
+      archer: false,
       isDuncanAttacking:true
     });
     let roll = Math.floor(Math.random() * 6) + 1;
@@ -88,9 +92,9 @@ class Game2 extends Component {
       let newEnemyShields = this.state.enemy.shields - damageDealt;
       this.setState({enemy: {shields: newEnemyShields}});
     }
-    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 825);
     setTimeout(() =>{this.setState({pierce:false})}, 550);
-    setTimeout(() =>{this.enemyPulseAttack()}, 550);
+    setTimeout(() =>{this.enemyPulseAttack()}, 1000);
     this.deathCheckEnemy();
     this.deathCheckPlayer();
     
@@ -99,7 +103,8 @@ class Game2 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
-      isGruntAttacking: true
+      isGruntAttacking: true,
+      archer: true
     });
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
     let damageDealt = 150 + pulseAttackCost;
@@ -152,6 +157,7 @@ class Game2 extends Component {
           <Row>
               <Col size="md-3">
                 <DuncanIdaho
+                  archer={this.state.archer}
                   isDuncanAttacking={this.state.isDuncanAttacking}
                   pierce={this.state.pierce}            
                 />
