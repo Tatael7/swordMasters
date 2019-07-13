@@ -62,6 +62,8 @@
   -o-animation: rotating 1s linear infinite;
   animation: rotating 1s linear infinite;
   position: relative;
+  /* setting attacking frame to not be visible normally */
+  visibility: hidden;
 }
 
 .Grunt.attacking{
@@ -70,6 +72,8 @@
   -webkit-animation-duration: 800ms;
   animation-name: attackGrunt;
   animation-duration: 800;
+  /* setting attacking frame to be visible upon state change */
+  visibility: visible;
  }
 
  .Elite {
@@ -255,6 +259,10 @@ margin-left:30%
   visibility: hidden;
 }
 .archerNot {
+  visibility: hidden;
+}
+/* setting resting frame to not be visible normally */
+.gruntRestingNot {
   visibility: hidden;
 }
 

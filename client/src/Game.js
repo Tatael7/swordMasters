@@ -31,6 +31,7 @@ class Game extends Component {
       isDuncanAttacking: false,
       isGruntAttacking: false,
       archer: true,
+      gruntResting: true, //calls the resting image
       isShowing: false,
       message: "",
       link: "",
@@ -63,16 +64,14 @@ class Game extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
-      //enemy frame switch goes here so youd basically call off the resting frame 
-      //since attacking is already active, go to line 74
+      gruntResting: false,
       isGruntAttacking: true,
       archer: true
     });
     let newPlayerShields = this.state.player.shields - 100;
     this.setState({player: {shields: newPlayerShields}});
     setTimeout(() => {this.setState({isGruntAttacking:false})}, 550);
-    //so here since attack frame is called off you initiate the resting frame 
-    //all this remains the same fore pulse, same process go to line 180
+    setTimeout(() => {this.setState({gruntResting:true})}, 552); //setstate of resting frame
 
   };
   
@@ -113,6 +112,7 @@ class Game extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      gruntResting: false,
       isGruntAttacking: true,
       archer: true
     });
@@ -179,6 +179,7 @@ class Game extends Component {
                 <SardaukarGrunt
                 // so here you just pass the prop of the resting frame and if
                 //all goes well it should work
+                gruntResting={this.state.gruntResting}
                 isGruntAttacking={this.state.isGruntAttacking}
                 pulsedGrunt={this.state.pulsedGrunt} 
                 />                

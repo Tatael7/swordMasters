@@ -7,7 +7,7 @@ const MenuSelect = () => {
         <div className="card" id="title">
             <ul id="menuul">
                 <li>
-                    <a href="/ixed">New Game</a>
+                    <a href="/intro">New Game</a>
                 </li>
                 <li>
                     <a href="/Login">Login</a>
