@@ -1,6 +1,6 @@
 import React from "react";
-import Picture from "./archAt.png";
-import Archer from "./archEmiya.png";
+import Picture from "./archAt.gif";
+import Archer from "./archEmiya.gif";
 import Power from "../../img/XSNu.gif";
 import Pierce from "../../Images/piercer.gif";
 
