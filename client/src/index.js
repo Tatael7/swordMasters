@@ -16,6 +16,7 @@ import Game6 from "./Game6";
 import MenuCurtain from "./components/MenuCurtain";
 import ThankYou from "./ThankYou";
 import Intro from "./Intro";
+import Login from "./Login"
 const routing = (
     <Router>
         <div style={{position:"relative", marginTop:"-7%"}}>
@@ -86,7 +87,7 @@ const routing = (
             <Route exact path="/game6" component={Game6}/>
             <Route exact path="/thankyou" component={ThankYou}/>
             <Route exact path="/intro" component={Intro}/>
-
+            <Route exact path ="/login" component= {Login}/>
             {/* <MusicPlayer
                 src={Cancion}
                 autoPlay
