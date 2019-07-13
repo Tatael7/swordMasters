@@ -1,3 +1,21 @@
+.rightFighterFlip{
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+
+#loginCharacterDiv{
+  visibility: visible;
+  /* background: aqua; */
+
+ background-color: rgb(0, 68, 131);
+ /* background-blend-mode: luminosity; */
+ /* background-size: 100 */
+}
+
 
 .combined {
   -webkit-text-stroke: 1px black;
