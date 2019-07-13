@@ -26,10 +26,9 @@ function BeastHarkonnen (props) {
                 }}
                 className={props.pulsedGrunt ? "pulsedGrunt" : "notPulsedGrunt"}
             />
-           <img src={Picture} alt="Beast Harkonnen" height="500" 
-                // style={{
-                //     position:"relative", zIndex:1,                
-                // }} 
+           <img src={Picture} 
+            alt="Beast Harkonnen" height="500" 
+            className={props.isBeastAttacking ? "Beast attacking" : "Beast"}/>
             /> 
         </div> 
     );

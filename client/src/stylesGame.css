@@ -72,6 +72,40 @@
   animation-duration: 800;
  }
 
+ .Elite {
+  -webkit-animation: rotating 1s linear infinite;
+  -moz-animation: rotating 1s linear infinite;
+  -ms-animation: rotating 1s linear infinite;
+  -o-animation: rotating 1s linear infinite;
+  animation: rotating 1s linear infinite;
+  position: relative;
+}
+
+.Elite.attacking{
+  position: relative;
+  -webkit-animation-name: attackGrunt;
+  -webkit-animation-duration: 800ms;
+  animation-name: attackGrunt;
+  animation-duration: 800;
+}
+
+.Beast {
+  -webkit-animation: rotating 1s linear infinite;
+  -moz-animation: rotating 1s linear infinite;
+  -ms-animation: rotating 1s linear infinite;
+  -o-animation: rotating 1s linear infinite;
+  animation: rotating 1s linear infinite;
+  position: relative;
+}
+
+.Beast.attacking{
+  position: relative;
+  -webkit-animation-name: attackGrunt;
+  -webkit-animation-duration: 800ms;
+  animation-name: attackGrunt;
+  animation-duration: 800;
+ }
+
 @-webkit-keyframes attackGrunt {
   0% { right: 0px;;}
   50% {right: 190%;}

@@ -22,7 +22,9 @@ class Game3 extends Component {
         attack: sessionStorage.getItem("enemyAttack"),
         defense: sessionStorage.getItem("enemyDefense")
       },
-      isAttacking: false,
+      isDuncanAttacking: false,
+      isEliteAttacking: false,
+      archer: true,
       isShowing: false,
       message: "",
       link: "",
@@ -38,31 +40,35 @@ class Game3 extends Component {
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({
       enemy: {shields: newEnemyShields},
-      isAttacking:true,
+      archer: false,
+      isDuncanAttacking:true,
       pulsedGrunt: true
     }); 
     this.deathCheckEnemy();
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
     setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
-    this.enemyAttack();
+    setTimeout(() => {this.enemyAttack()}, 1000);
     this.deathCheckPlayer();
 
   }
  
   enemyAttack = () => {
-    this.setState({player: {shields: this.state.player.shields}});
-    console.log(`The enemy attacks`);
-    console.log(this.state.player.shields);
+    this.setState({player: {shields: this.state.player.shields},
+      isEliteAttacking: true,
+      archer: true
+    });
     let newPlayerShields = this.state.player.shields - 200;
-    console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
+    setTimeout(() => {this.setState({isEliteAttacking:false})}, 550)
+
   };
   
   pulseAttack = () => {
     this.setState({
       enemy: {shields: this.state.enemy.shields},
-      isAttacking:true
-      // pierce:true
+      archer: false,
+      isDuncanAttacking:true
+      
     });
     let roll = Math.floor(Math.random() * 6) + 1;
     if (roll === 1 || roll === 4) {
@@ -84,9 +90,9 @@ class Game3 extends Component {
       let newEnemyShields = this.state.enemy.shields - damageDealt;
       this.setState({enemy: {shields: newEnemyShields}});
     }
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
     setTimeout(() =>{this.setState({pierce:false})}, 550);
-    this.enemyPulseAttack();
+    setTimeout(() =>{this.enemyPulseAttack()}, 1000);
     this.deathCheckEnemy();
     this.deathCheckPlayer();
     
@@ -94,11 +100,15 @@ class Game3 extends Component {
   }
 
   enemyPulseAttack = () => {
-    this.setState({player: {shields: this.state.player.shields}});
+    this.setState({player: {shields: this.state.player.shields},
+      isEliteAttacking: true,
+      archer: true
+    });
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
     let damageDealt = 200 + pulseAttackCost;
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
+    setTimeout(() => {this.setState({isEliteAttacking:false})}, 550);
   }
 
   deathCheckPlayer = () => {
@@ -144,7 +154,8 @@ class Game3 extends Component {
           <Row>
               <Col size="md-3">
                 <DuncanIdaho
-                  isAttacking={this.state.isAttacking}
+                  archer={this.state.archer}
+                  isDuncanAttacking={this.state.isDuncanAttacking}
                   pierce={this.state.pierce}
                 />
               </Col>
@@ -152,6 +163,7 @@ class Game3 extends Component {
               <Col size="md-3">
                 <SardaukarElite
                   pulsedGrunt={this.state.pulsedGrunt}
+                  isEliteAttacking={this.state.isEliteAttacking}
                 />                
               </Col>
           </Row>

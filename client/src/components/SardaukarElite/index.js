@@ -16,7 +16,10 @@ function SardaukarElite (props) {
                 }}
                 className={props.pulsedGrunt ? "pulsedGrunt" : "notPulsedGrunt"}
             />
-            <img src={Picture} alt="Sardaukar Elite" height="450" className={props.isAttacking ? "SardaukarElite attacking" : "SardaukarElite"}/>
+            <img src={Picture} 
+                alt="Sardaukar Elite" 
+                height="450" 
+                className={props.isEliteAttacking ? "Elite attacking" : "Elite"}/>
         </div>
     );
 }

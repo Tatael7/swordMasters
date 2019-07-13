@@ -19,7 +19,9 @@ class Game6 extends Component {
       enemy: {
         shields: 5000
       },
-      isAttacking: false,
+      isDuncanAttacking: false,
+      isBeastAttacking: false,
+      archer: true,
       isShowing: false,
       message: "",
       link: "",
@@ -29,9 +31,6 @@ class Game6 extends Component {
       pierce: false,
       cancion: Cancion
 
-    
-      
-
     }
   };
 
@@ -40,37 +39,46 @@ class Game6 extends Component {
     console.log(`enemy health ${newEnemyShields}`);
     this.setState({
       enemy: {shields: newEnemyShields},
-      isAttacking:true,
+      archer: false,
+      isDuncanAttacking:true,
       pulsedGrunt: true
     }); 
     this.deathCheckEnemy();
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
     setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
-    this.enemyAttack();
+    setTimeout(() => {this.enemyAttack()}, 1000);
     this.deathCheckPlayer();
 
   }
 
   enemyAttack = () => {
-    this.setState({player: {shields: this.state.player.shields}});
+    this.setState({player: {shields: this.state.player.shields},
+      isBeastAttacking: true,
+      archer: true
+    });
     let roll = Math.floor(Math.random() * 9) + 1;
     console.log(`this is beast's roll ${roll}`);
     if ( roll === 6) {
       let newPlayerShields = this.state.player.shields - this.state.player.shields;
       this.setState({player: {shields: newPlayerShields}});
+      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550)
+
     }
     else {
       let newPlayerShields = this.state.player.shields - 500;
       this.setState({player: {shields: newPlayerShields}});
+      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550)
+
     }
   };
   
   pulseAttack = () => {
-    this.setState({enemy: {shields: this.state.enemy.shields},
-      isAttacking:true
+    this.setState({
+      enemy: {shields: this.state.enemy.shields},
+      archer: false,
+      isDuncanAttacking:true
     });
-    console.log("pulse attack");
-    console.log(this.state.enemy.shields);
+    
     let roll = Math.floor(Math.random() * 6) + 1;
     console.log(`this is the roll ${roll}`);
     if (roll === 1 || roll === 4) {
@@ -96,16 +104,18 @@ class Game6 extends Component {
       console.log(`new enemy shields ${newEnemyShields}`);
       this.setState({enemy: {shields: newEnemyShields}});
     }
-    setTimeout(() =>{this.setState({isAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
     setTimeout(() =>{this.setState({pierce:false})}, 550);
-    this.enemyPulseAttack();
+    setTimeout(() =>{this.enemyPulseAttack()}, 1000);
     this.deathCheckEnemy();
     this.deathCheckPlayer();  
 
   }
 
   enemyPulseAttack = () => {
-    this.setState({player: {shields: this.state.player.shields}});
+    this.setState({player: {shields: this.state.player.shields},
+      isBeastAttacking: true,
+      archer: true});
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
     let damageDealt = pulseAttackCost + 500;
     this.setState({player: {shields: this.state.player.shields}});
@@ -114,10 +124,14 @@ class Game6 extends Component {
     if ( roll === 6) {
       let newPlayerShields = this.state.player.shields - this.state.player.shields;
       this.setState({player: {shields: newPlayerShields}});
+      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550);
+
     }
     else {
       let newPlayerShields = this.state.player.shields - damageDealt;
       this.setState({player: {shields: newPlayerShields}});
+      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550);
+
     }
   }
 
@@ -175,13 +189,15 @@ class Game6 extends Component {
           <Row>
               <Col size="md-3">
                 <DuncanIdaho
-                  isAttacking={this.state.isAttacking}
+                  archer={this.state.archer}
+                  isDuncanAttacking={this.state.isDuncanAttacking}
+                  pierce={this.state.pierce}                  
                   poweredUp={this.state.poweredUp}
-                  pierce={this.state.pierce}
                 />
               </Col>
               <Col size="md-9">
                 <BeastHarkonnen
+                  isBeastAttacking={this.state.isBeastAttacking}
                   fireExploding={this.state.fireExploding}
                   pulsedGrunt={this.state.pulsedGrunt}
                 />
