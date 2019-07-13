@@ -35,6 +35,12 @@ function DuncanIdaho (props) {
             
             />
             {/* added this part */}
+            {/* notes for changing sprite
+            so basically the image at the bottom ie "Picture" is the main
+            image and the attacking image should be above with an absolute position
+            then you pass it the property that youll use to call it and thats all you 
+            do in the component
+            now go to stylesGame.css line 260*/}
             <img src={Archer} alt="archer"
                 height="450"
                 style={{

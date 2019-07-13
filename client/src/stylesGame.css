@@ -257,6 +257,12 @@ margin-left:30%
 .archerNot {
   visibility: hidden;
 }
+
+/* so here you can see that the attacking image is 
+called like a normally set gif that wed be using
+for what ever like the attack so you just set it to hidden
+now go to Game line 26 */
+
     .introMovie{
       margin-top:-5%;
       margin-left:3%;

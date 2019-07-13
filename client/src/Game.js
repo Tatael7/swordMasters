@@ -23,6 +23,11 @@ class Game extends Component {
         attack: sessionStorage.getItem("enemyAttack"),
         defense: sessionStorage.getItem("enemyDefense")
       },
+
+      // as you can see we set the primal picture ie the attacking 
+      // frame to be false but we set the secondary picture ie the resting frame (that we 
+      // just set to hidden) as true, remember the attacking frame has the most value
+      // to us, now go to line 48
       isDuncanAttacking: false,
       isGruntAttacking: false,
       archer: true,
@@ -38,11 +43,10 @@ class Game extends Component {
 
 
   normalAttack = () => {
-    
-    console.log("normal attack");
-    console.log(this.state.enemy.shields);
     let newEnemyShields = this.state.enemy.shields - 100;
     console.log(`enemy health ${newEnemyShields}`);
+    // in this set state we switch the pictures, we set the attacking frame to true
+    //and we set the resting frame to false, so for the enemies it would take place at line 65
     this.setState({
       enemy: {shields: newEnemyShields},
       archer: false,
@@ -59,12 +63,16 @@ class Game extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      //enemy frame switch goes here so youd basically call off the resting frame 
+      //since attacking is already active, go to line 74
       isGruntAttacking: true,
       archer: true
     });
     let newPlayerShields = this.state.player.shields - 100;
     this.setState({player: {shields: newPlayerShields}});
-    setTimeout(() => {this.setState({isGruntAttacking:false})}, 550)
+    setTimeout(() => {this.setState({isGruntAttacking:false})}, 550);
+    //so here since attack frame is called off you initiate the resting frame 
+    //all this remains the same fore pulse, same process go to line 180
 
   };
   
@@ -169,8 +177,9 @@ class Game extends Component {
               <Col size="md-6"></Col>
               <Col size="md-3">
                 <SardaukarGrunt
+                // so here you just pass the prop of the resting frame and if
+                //all goes well it should work
                 isGruntAttacking={this.state.isGruntAttacking}
-                // gruntAttaking={this.state.gruntAttaking}
                 pulsedGrunt={this.state.pulsedGrunt} 
                 />                
               </Col>
