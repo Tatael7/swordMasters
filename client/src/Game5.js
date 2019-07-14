@@ -149,7 +149,7 @@ class Game5 extends Component {
             {this.state.message}             
         </Modal>
         <Container>
-          <div >
+          <div style={{marginTop:"-10%", position:"relative", zIndex:0}}>
           <Row>
               <Col size="md-3">
                 <DuncanIdaho

@@ -37,18 +37,20 @@ class Intro extends React.Component {
             alert("i have been clicked");
         }
         return(
-            <div>
-                <Container>
+            <div       style={{marginTop:"10%"}}>
+                <Container
+              
+                    >
                     <Row>
                         <Col size="lg-6">
-                            <img src={introMovie} alt="introMovie" width="100"
+                            <img src={introMovie} alt="introMovie" width="100%"
                             className="introMovie"
                             
                             />
                         </Col>
-                        <Col size="lg-6">
+                        {/* <Col size="lg-6">
                             <h1>here goes the carousel</h1>
-                        </Col>
+                        </Col> */}
                     </Row>
                     <Row>
                         <Col size="lg-6">

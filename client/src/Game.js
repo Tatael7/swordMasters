@@ -156,7 +156,8 @@ class Game extends Component {
       
       <div className="A">
         {initiateStats()}
-        <Modal
+        <Modal  
+        // style={{position:"absolute", zIndex:500}}
           className="modal"
           show={this.state.isShowing}
           close={this.closeModalHandler}
@@ -165,7 +166,7 @@ class Game extends Component {
           {this.state.message}             
         </Modal>
         <Container>
-          <div>
+          <div style={{marginTop:"-10%", position:"relative", zIndex:0}}>
             <Row>
               <Col size="md-3" >
                 <DuncanIdaho 
@@ -176,7 +177,7 @@ class Game extends Component {
               </Col>
               <Col size="md-6"></Col>
               <Col size="md-3">
-                <SardaukarGrunt
+                <SardaukarGrunt style={{position:"relative", zIndex:0}}
                 // so here you just pass the prop of the resting frame and if
                 //all goes well it should work
                 gruntResting={this.state.gruntResting}

@@ -188,13 +188,14 @@ class Game6 extends Component {
             {this.state.message}             
         </Modal>
         <Container>
-          <div >
+          <div style={{marginTop:"-14%", position:"relative", zIndex:0}}>
           <img src={require("../src/img/rain.gif")} alt="rain" height="80%" width="100%"
              style={{zIndex:0, position:"fixed", top:40}}   
               />
           <Row>
               <Col size="md-3">
                 <DuncanIdaho
+                // style={{Bottom:"-15%", padding:0}}
                   archer={this.state.archer}
                   isDuncanAttacking={this.state.isDuncanAttacking}
                   pierce={this.state.pierce}                  

@@ -59,7 +59,7 @@ class LevelOneThree extends React.Component {
     render() {
         
         return (
-            <div >
+            <div style={{marginTop:"-10%", position:"relative", zIndex:0}}>
                 { this.state.isShowing ? <div onClick={this.closeModalHandler} className="back-drop"></div> : null }
                 <img 
                     src={require("./img/mapPlay_Straight.jpg")}
@@ -82,7 +82,7 @@ class LevelOneThree extends React.Component {
                     >
                         {this.state.message}             
                 </Modal> 
-                <LevelOne
+                <LevelOne 
                     story={this.state.story}
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}

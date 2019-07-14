@@ -29,6 +29,7 @@ class Game2 extends Component {
       isDuncanAttacking: false,
       isGruntAttacking: false,
       archer: true,
+      gruntResting: true, //calls the resting image
       isShowing: false,
       message: "",
       link: "",
@@ -64,6 +65,7 @@ class Game2 extends Component {
     let newPlayerShields = this.state.player.shields - 150;
     this.setState({player: {shields: newPlayerShields}});
     setTimeout(() => {this.setState({isGruntAttacking:false})}, 550)
+  setTimeout(() => {this.setState({gruntResting:true})}, 552); //setstate of resting frame
   };
 
   pulseAttack = () => {
@@ -153,7 +155,7 @@ class Game2 extends Component {
           {this.state.message}             
         </Modal>
         <Container>
-          <div >
+          <div style={{marginTop:"-10%", position:"relative", zIndex:0}}>
           <Row>
               <Col size="md-3">
                 <DuncanIdaho
