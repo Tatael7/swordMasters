@@ -1,9 +1,9 @@
 import React from "react";
 import Valid from "card-validator";
-import Potion from "../../img/item_healthUp.png";
-import ExBoost from "../../img/item_upMaxHealth.png";
-import Crissaegrim from "../../img/item_swordCrissaegrim.png";
-import GodMode from "../../img/item_godMode.png";
+import Potion from "../../img/item_healthCard.PNG";
+import ExBoost from "../../img/item_XPcard.PNG";
+import Crissaegrim from "../../img/item_swordCard.PNG";
+import GodMode from "../../img/item_GodCard.PNG";
 
 
 let numberValidation = Valid.number("4111");
@@ -31,20 +31,20 @@ class MicroTransactions extends React.Component {
                 <div className="col-lg-6">
                     <ol>
                         <li>
-                            <img src={Potion} alt="a potion" height="50" width="50"/>
-                            <p>Buy a health potion to boost your overall health.</p>
+                            <img src={Potion} alt="a potion" height="450"/>
+                            
                         </li>
                         <li>
-                            <img src={ExBoost} alt="an experience boost" height="50" width="50"/>
-                            <p>Buy a medallion that boosts your experience ten-fold.</p>
+                            <img src={ExBoost} alt="an experience boost" height="450"/>
+                          
                         </li>
                         <li>
-                            <img src={Crissaegrim} alt="legendary sword Crissaegrim" height="50" width="50"/>
-                            <p>Buy the Legendary Sword Crissaegrim and rend your enemies to ribbons.</p>
+                            <img src={Crissaegrim} alt="legendary sword Crissaegrim" height="450"/>
+                          
                         </li>
                         <li>
-                            <img src={GodMode} alt="final form Duncan" height="100" width="50"/>
-                            <p>Aquire God Mode Duncan to breeze through the game.</p>
+                            <img src={GodMode} alt="final form Duncan" height="450"/>
+                            
                         </li>
                     </ol>
                 </div>
