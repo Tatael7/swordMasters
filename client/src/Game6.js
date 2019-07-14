@@ -22,6 +22,7 @@ class Game6 extends Component {
       isDuncanAttacking: false,
       isBeastAttacking: false,
       archer: true,
+      beastResting: true,
       isShowing: false,
       message: "",
       link: "",
@@ -45,7 +46,8 @@ class Game6 extends Component {
     }); 
     this.deathCheckEnemy();
     setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
-    setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
+    setTimeout(() =>{this.setState({archer:true})}, 550);
+    setTimeout(() => {this.setState({pulsedGrunt:false})}, 570);
     setTimeout(() => {this.enemyAttack()}, 1000);
     this.deathCheckPlayer();
 
@@ -53,6 +55,7 @@ class Game6 extends Component {
 
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      beastResting: false,
       isBeastAttacking: true,
       archer: true
     });
@@ -61,14 +64,15 @@ class Game6 extends Component {
     if ( roll === 6) {
       let newPlayerShields = this.state.player.shields - this.state.player.shields;
       this.setState({player: {shields: newPlayerShields}});
-      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550)
+      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550);
+      setTimeout(() => {this.setState({beastResting: true})}, 560);
 
     }
     else {
       let newPlayerShields = this.state.player.shields - 500;
       this.setState({player: {shields: newPlayerShields}});
-      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550)
-
+      setTimeout(() => {this.setState({isBeastAttacking:false})}, 550);
+      setTimeout(() => {this.setState({beastResting: true})}, 560);
     }
   };
   
@@ -106,6 +110,7 @@ class Game6 extends Component {
     }
     setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
     setTimeout(() =>{this.setState({pierce:false})}, 550);
+    setTimeout(() =>{this.setState({archer:true})}, 550);
     setTimeout(() =>{this.enemyPulseAttack()}, 1000);
     this.deathCheckEnemy();
     this.deathCheckPlayer();  
@@ -114,6 +119,7 @@ class Game6 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      beastResting: false,
       isBeastAttacking: true,
       archer: true});
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
@@ -125,13 +131,13 @@ class Game6 extends Component {
       let newPlayerShields = this.state.player.shields - this.state.player.shields;
       this.setState({player: {shields: newPlayerShields}});
       setTimeout(() => {this.setState({isBeastAttacking:false})}, 550);
-
+      setTimeout(() => {this.setState({beastResting: true})}, 560);
     }
     else {
       let newPlayerShields = this.state.player.shields - damageDealt;
       this.setState({player: {shields: newPlayerShields}});
       setTimeout(() => {this.setState({isBeastAttacking:false})}, 550);
-
+      setTimeout(() => {this.setState({beastResting: true})}, 560);
     }
   }
 
@@ -197,6 +203,7 @@ class Game6 extends Component {
               </Col>
               <Col size="md-9">
                 <BeastHarkonnen
+                  beastResting={this.state.beastResting}
                   isBeastAttacking={this.state.isBeastAttacking}
                   fireExploding={this.state.fireExploding}
                   pulsedGrunt={this.state.pulsedGrunt}

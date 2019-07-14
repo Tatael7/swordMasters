@@ -1,5 +1,6 @@
 import React from "react";
-import Picture from "./beastHarkonnen.gif";
+import Foto from "./beastHarkonnen.gif";
+import Picture from "./beastPunch.gif";
 import Pulsed from "../../img/slashPlayer (1).gif";
 
 function BeastHarkonnen (props) {
@@ -26,9 +27,17 @@ function BeastHarkonnen (props) {
                 }}
                 className={props.pulsedGrunt ? "pulsedGrunt" : "notPulsedGrunt"}
             />
+            <img src={Foto}
+                alt="Beast Attacking"
+                height="500"
+                style={{
+                    position: "absolute"
+                }}
+                className={props.beastResting ? "beastResting" : "beastRestingNot"}
+            />
            <img src={Picture} 
             alt="Beast Harkonnen" height="500" 
-            className={props.isBeastAttacking ? "Beast attacking" : "Beast"}/>
+            className={props.isBeastAttacking ? "Beast attacking" : "Beast"}
             /> 
         </div> 
     );

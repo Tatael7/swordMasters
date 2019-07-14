@@ -25,6 +25,7 @@ class Game3 extends Component {
       isDuncanAttacking: false,
       isEliteAttacking: false,
       archer: true,
+      eliteResting: true,
       isShowing: false,
       message: "",
       link: "",
@@ -46,6 +47,7 @@ class Game3 extends Component {
     }); 
     this.deathCheckEnemy();
     setTimeout(() =>{this.setState({isDuncanAttacking:false})}, 550);
+    setTimeout(() =>{this.setState({archer:true})}, 550);
     setTimeout(() => {this.setState({pulsedGrunt:false})}, 550);
     setTimeout(() => {this.enemyAttack()}, 1000);
     this.deathCheckPlayer();
@@ -54,12 +56,15 @@ class Game3 extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      eliteResting: false,
       isEliteAttacking: true,
       archer: true
     });
     let newPlayerShields = this.state.player.shields - 200;
     this.setState({player: {shields: newPlayerShields}});
-    setTimeout(() => {this.setState({isEliteAttacking:false})}, 550)
+    setTimeout(() => {this.setState({isEliteAttacking:false})}, 550);
+    setTimeout(() => {this.setState({eliteResting: true})}, 560);
+
 
   };
   
@@ -101,6 +106,7 @@ class Game3 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      eliteResting: false,
       isEliteAttacking: true,
       archer: true
     });
@@ -109,6 +115,7 @@ class Game3 extends Component {
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
     setTimeout(() => {this.setState({isEliteAttacking:false})}, 550);
+    setTimeout(() => {this.setState({eliteResting: true})}, 560);
   }
 
   deathCheckPlayer = () => {
@@ -163,6 +170,7 @@ class Game3 extends Component {
               <Col size="md-3">
                 <SardaukarElite
                   pulsedGrunt={this.state.pulsedGrunt}
+                  eliteResting={this.state.eliteResting}
                   isEliteAttacking={this.state.isEliteAttacking}
                 />                
               </Col>

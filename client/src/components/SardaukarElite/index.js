@@ -1,5 +1,6 @@
 import React from "react";
-import Picture from "../../img/sardaukarElite.gif";
+import Picture from "./EliteLightning.gif";
+import Foto from "./sardaukarElite.gif";
 import Pulsed from "../../img/slashPlayer (1).gif";
 
 function SardaukarElite (props) {
@@ -15,6 +16,14 @@ function SardaukarElite (props) {
                     zIndex: 2
                 }}
                 className={props.pulsedGrunt ? "pulsedGrunt" : "notPulsedGrunt"}
+            />
+            <img src={Foto}
+                alt="Resting Elite"
+                height="450"
+                style={{
+                    position: "absolute"
+                }}
+                className={props.eliteResting ? "eliteResting" : "eliteRestingNot"}
             />
             <img src={Picture} 
                 alt="Sardaukar Elite" 
