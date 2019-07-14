@@ -77,7 +77,7 @@ class LevelFour extends React.Component {
                 <div 
                     style={{
                         position:"absolute",
-                        top:150
+                        top:70
                     }}                
                 >
                 <Modal

@@ -25,6 +25,7 @@ class Game4 extends Component {
       isDuncanAttacking: false,
       isGruntAttacking: false,
       archer: true,
+      gruntResting: true, //calls the resting image
       isShowing: false,
       message: "",
       link: "",
@@ -148,7 +149,7 @@ class Game4 extends Component {
             {this.state.message}             
         </Modal>
         <Container>
-          <div >
+          <div style={{marginTop:"-10%", position:"relative", zIndex:0}}>
           <Row>
               <Col size="md-3">
                 <DuncanIdaho

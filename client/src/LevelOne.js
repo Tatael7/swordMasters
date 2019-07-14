@@ -82,7 +82,7 @@ class LevelOneOne extends React.Component {
                 <div 
                     style={{
                         position:"absolute",
-                        top:150
+                        top:150, marginTop:"-5%"
                     }}                
                 >
                 <Modal
