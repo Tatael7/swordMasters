@@ -23,6 +23,7 @@ class Game5 extends Component {
       },
       isDuncanAttacking: false,
       isEliteAttacking: false,
+      eliteResting: true,
       archer: true,
       isAttacking: false,
       isShowing: false,
@@ -54,13 +55,14 @@ class Game5 extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      eliteResting: false,
       isEliteAttacking: true,
       archer: true});
     let newPlayerShields = this.state.player.shields - 300;
     console.log(`player health ${newPlayerShields}`);
     this.setState({player: {shields: newPlayerShields}});
-    setTimeout(() => {this.setState({isEliteAttacking:false})}, 550)
-
+    setTimeout(() => {this.setState({isEliteAttacking:false})}, 550);
+    setTimeout(() => {this.setState({eliteResting: true})}, 560);
   };
   
   pulseAttack = () => {
@@ -101,6 +103,7 @@ class Game5 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      eliteResting:false,
       isEliteAttacking: true,
       archer: true});
     let pulseAttackCost = Math.floor(this.state.player.shields/10);
@@ -108,7 +111,7 @@ class Game5 extends Component {
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
     setTimeout(() => {this.setState({isEliteAttacking:false})}, 550);
-  }
+    setTimeout(() => {this.setState({eliteResting: true})}, 560);  }
 
   deathCheckPlayer = () => {
     let vida = this.state.player.shields; 
@@ -160,12 +163,14 @@ class Game5 extends Component {
               </Col>
               <Col size="md-3">
                 <SardaukarElite
+                  eliteResting={this.state.eliteResting}
                   pulsedGrunt={this.state.pulsedGrunt}
                   isEliteAttacking={this.state.isEliteAttacking}
                 />
               </Col>
               <Col size="md-3">
                 <SardaukarElite
+                  eliteResting={this.state.eliteResting}
                   pulsedGrunt={this.state.pulsedGrunt}
                   isEliteAttacking={this.state.isEliteAttacking}
                 />

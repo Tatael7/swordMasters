@@ -55,12 +55,14 @@ class Game4 extends Component {
  
   enemyAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      gruntResting:false,
       isGruntAttacking: true,
       archer: true
     });
     let newPlayerShields = this.state.player.shields - 250;
     this.setState({player: {shields: newPlayerShields}});
     setTimeout(() => {this.setState({isGruntAttacking:false})}, 550);
+    setTimeout(() => {this.setState({gruntResting:true})}, 552);
   };
   
   pulseAttack = () => {
@@ -100,6 +102,7 @@ class Game4 extends Component {
 
   enemyPulseAttack = () => {
     this.setState({player: {shields: this.state.player.shields},
+      gruntResting: false,
       isGruntAttacking: true,
       archer: true
     });
@@ -108,7 +111,7 @@ class Game4 extends Component {
     let newPlayerShields = this.state.player.shields - damageDealt;
     this.setState({player: {shields: newPlayerShields}});
     setTimeout(() => {this.setState({isGruntAttacking:false})}, 550);
-  }
+    setTimeout(() => {this.setState({gruntResting:true})}, 552);  }
 
   deathCheckPlayer = () => {
     let vida = this.state.player.shields; 
@@ -160,12 +163,14 @@ class Game4 extends Component {
               </Col>
               <Col size="md-3">
                 <SardaukarGrunt
+                gruntResting={this.state.gruntResting}
                 isGruntAttacking={this.state.isGruntAttacking}
                 pulsedGrunt={this.state.pulsedGrunt}
                 />
               </Col>
               <Col size="md-3">
                 <SardaukarGrunt
+                  gruntResting={this.state.gruntResting}
                   isGruntAttacking={this.state.isGruntAttacking}
                   pulsedGrunt={this.state.pulsedGrunt}                
 
@@ -173,6 +178,7 @@ class Game4 extends Component {
               </Col>
               <Col size="md-3">
                 <SardaukarGrunt
+                  gruntResting={this.state.gruntResting}
                   isGruntAttacking={this.state.isGruntAttacking}
                   pulsedGrunt={this.state.pulsedGrunt}                
                 />                
