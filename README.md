@@ -16,3 +16,19 @@ there was breaking news about Legendary Entertainment obtaining the rights to pr
 We decided to take an approach often used by TellTale Games, which makes many Walking Dead games: make a game based on an ancillary supporting character that is not
 the main character or retells the main story.
 Annual video game revenue is over 40 billion a year. 
+
+Annual Revenues for mentioned companies (according to Owler.com):
+Legendary Entertainment annual revenue: $26.5M.
+TellTale Games: $10m. 
+
+Among the Star Studded cast involved in the new Dune movie include Jason Mamoa as Duncan Idaho (protagonist ally) and Dave Bautista as Rabban "Beast" Harkonnen(antagonist ally). This is great news for the franchise. Jason Mamoa recently starred in the Aquaman movie, with Khal Drogo at the helm that made over a billion dollars in revenue.
+
+Ever since appearing in "Guardians of the Galaxy" and "Blade Runner 2049" Dave has become our favorite wrestler turned actor since Roddy Piper ran out of bubblegum in "They Live". The new Dune movie is directed by Blade Runner 2049's Denis Villeneuve.
+
+We knew that was a great starting point for setting up the story for this game. 
+
+Box office sales:
+Blade Runner 2049: $259.2 m. 
+Guardians of the Galaxy: $773.3m.
+Guardians of the Galaxy 2: $863.8 m.
+Aquaman: $1.148 b.
