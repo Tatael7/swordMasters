@@ -4,7 +4,7 @@ import SardaukarElite from "./components/SardaukarElite";
 import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
-import Cancion from "./img/IronMaiden-ToTameLand8-Bit.mp3";
+import Cancion from "./img/tameAlandPart3.mp3";
 
 
 
@@ -156,9 +156,9 @@ class Game3 extends Component {
           link={this.state.link}>  
             {this.state.message}             
         </Modal>
-        <Container>
+        <Container >
           <div >
-          <Row>
+          <Row style={{marginTop:"-30%", }}>
               <Col size="md-3">
                 <DuncanIdaho
                   archer={this.state.archer}

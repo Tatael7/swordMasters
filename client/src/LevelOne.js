@@ -3,6 +3,7 @@ import LevelOne from "./components/LevelOne";
 import Modal from "./components/Modal/Modal";
 // import "./stylesGame.css";
 import "./test.css";
+import Cancion from "./img/latcInstrumentalsPart1.mp3";
 
 class LevelOneOne extends React.Component {
 
@@ -15,7 +16,9 @@ class LevelOneOne extends React.Component {
             story: `You start your adventure in the citadel, you come into a street, you can
                 continue forward, go left or right.`,
             link: "",
-            message: ""
+            message: "",
+            cancion: Cancion,
+            // attackButton:buttonHidden,
         }
 
     
@@ -40,8 +43,8 @@ class LevelOneOne extends React.Component {
         this.setState({isShowing: true});
         this.setState({message: newStoryLine});
         this.setState({link: "/leveloneone"});
-        this.setState({Battery01: false})
-
+        this.setState({Battery01: false});
+      
     };
     
     handleClickUp = () =>  {
@@ -77,14 +80,13 @@ class LevelOneOne extends React.Component {
                     alt="map"
                     height="100%"
                     width="100%"
-                
-                />
-                <div 
+                     />
+                    <div 
                     style={{
                         position:"absolute",
                         top:150, marginTop:"-5%"
                     }}                
-                >
+                    >
                 <Modal
                     className="modal"
                     show={this.state.isShowing}
@@ -103,6 +105,7 @@ class LevelOneOne extends React.Component {
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
+                    
                 />
                 </div>
             </div>

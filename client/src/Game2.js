@@ -6,7 +6,7 @@ import BattleMenu from "./components/BattleMenu";
 import { Container, Row, Col } from "./components/Grid";
 import Modal from "./components/Modal/Modal";
 import "./test.css";
-import Cancion from "./img/IronMaiden-ToTameLand8-Bit.mp3";
+import Cancion from "./img/tameAlandPart2.mp3";
 
 
 

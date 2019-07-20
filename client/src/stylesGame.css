@@ -143,6 +143,9 @@ float: right
   float: right
 }
 
+.buttonsHidden{
+  visibility: hidden;
+}
 
 /*Beast Harkonnen transition*/
 #beastHarkonnen {
