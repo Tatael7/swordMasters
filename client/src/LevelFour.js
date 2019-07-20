@@ -1,6 +1,7 @@
 import React from "react";
 import LevelOne from "./components/LevelOne";
 import Modal from "./components/Modal/Modal";
+// import Cancion from "./img/latcInstrumentalsPart4.mp3";
 
 class LevelFour extends React.Component {
 
@@ -14,7 +15,9 @@ class LevelFour extends React.Component {
             the rythmic machine breathing of your final enemy, he stands before you waiting.
             One more battle hero.`,
             link: "",
-            message: ""
+            message: "",
+            // cancion: Cancion
+
         }
     }
     
@@ -93,6 +96,7 @@ class LevelFour extends React.Component {
                     handleClickLeft={this.handleClickLeft}
                     handleClickRight={this.handleClickRight}
                     handleClickUp={this.handleClickUp}
+                    // cancion={this.state.cancion}
                 />
                 </div>
             </div>
