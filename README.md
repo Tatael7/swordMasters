@@ -1,8 +1,9 @@
 # SwordMasters of Ginaz!
 
-![alt text](https://github.com/Tatael7/swordMasters/client/src/img/foroScre.png "Logo Title Text 1")
+
 ![Image of mapScreen](client/src/img/foroScre.png "Screen")
-![Image of mapScreen](https://Tatael7/.github.com/swordMasters/client/src/img/foroScre.png)
+![alt text](client/src/img/foroScre.png "Screen2")
+
 
 
 
