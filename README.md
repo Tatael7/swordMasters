@@ -2,7 +2,7 @@
 
 
 ![Image of mapScreen](client/src/img/foroScre.png "Screen")
-![alt text](client/src/img/foroScre.png "Screen2")
+![alt text](client/src/img/battleScreen.png "Screen2")
 
 
 
