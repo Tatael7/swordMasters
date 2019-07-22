@@ -1,4 +1,5 @@
 # SwordMasters of Ginaz!
+![Image of mapScreen](https://Tatael7/.github.com/swordMasters/client/src/img/battleScreen.png)
 
 
 
