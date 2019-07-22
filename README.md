@@ -1,12 +1,17 @@
 # SwordMasters of Ginaz!
 
-#Link to Game Pitch:
+
+
+# Link to Game Pitch:
 https://vimeo.com/348076488
 
-#Link to Game Trailer:
+# Link to Game Trailer:
 https://vimeo.com/346965384
 
-Market Research:
+# Play the Game
+https://morning-refuge-74795.herokuapp.com/
+
+# Market Research:
 
 Frank Herbert's epic literary masterpiece "Dune" is in production as a 2 part movie with cast of acting juggernauts and cutting edge directors.
 
@@ -17,7 +22,7 @@ We decided to take an approach often used by TellTale Games, which makes many Wa
 the main character or retells the main story.
 Annual video game revenue is over 40 billion a year. 
 
-Annual Revenues for mentioned companies (according to Owler.com):
+# Annual Revenues for mentioned companies (according to Owler.com):
 Legendary Entertainment annual revenue: $26.5M.
 TellTale Games: $10m. 
 
@@ -27,11 +32,11 @@ Ever since appearing in "Guardians of the Galaxy" and "Blade Runner 2049" Dave h
 
 We knew that was a great starting point for setting up the story for this game. 
 
-Box office sales:
+# Box office sales:
 Blade Runner 2049: $259.2 m. 
 Guardians of the Galaxy: $773.3m.
 Guardians of the Galaxy 2: $863.8 m.
 Aquaman: $1.148 b.
 
 
-This game has unlimited potential.
+# This game has unlimited potential.
