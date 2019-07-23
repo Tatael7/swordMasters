@@ -2,7 +2,7 @@
 
 
 ![Image of mapScreen](client/src/img/foroScre.png "Screen")
-![alt text](client/src/img/battleScreen.png "Screen2")
+![screen2](client/src/img/battleScreen.png "Screen2")
 
 
 
@@ -50,6 +50,6 @@ Aquaman: $1.148 b.
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-![alt text](client/src/img/ginazGame6PerformanceRank20July2019.png "July20_Performance6")
-![alt text](client/src/img/ginazPerformanceRank20July2019.png "July20_Performance1")
-![alt text](client/src/img/huge_node_modules.png "July20_Performance1")
+![perf6](client/src/img/ginazGame6PerformanceRank20July2019.png "July20_Performance6")
+![perf1](client/src/img/ginazPerformanceRank20July2019.png "July20_Performance1")
+![nodeModules](client/src/img/huge_node_modules.png "July20_Performance1")
