@@ -46,3 +46,10 @@ Aquaman: $1.148 b.
 
 
 # This game has unlimited potential.
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+![alt text](client/src/img/ginazGame6PerformanceRank20July2019.png "July20_Performance6")
+![alt text](client/src/img/ginazPerformanceRank20July2019.png "July20_Performance1")
+![alt text](client/src/img/huge_node_modules.png "July20_Performance1")
