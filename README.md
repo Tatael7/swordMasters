@@ -51,5 +51,5 @@ Aquaman: $1.148 b.
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ![perf6](client/src/img/ginazGame6PerformanceRank20July2019.png "July20_Performance6")
-![perf1](client/src/img/ginazPerformanceRank20July2019.png "July20_Performance1")
-![nodeModules](client/src/img/huge_node_modules.png "July20_Performance1")
+
+![nodeModules](client/src/img/huge_node_modules.png "July20_Performance2")
